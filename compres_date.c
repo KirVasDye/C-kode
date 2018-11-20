@@ -23,30 +23,27 @@ int main(void) {
 
 	// Установка нового дня
 
-	datec_t a;
 	printf("Enter new date day is ");
-	scanf("%u", &a);
-	datec = setDay(datec, a);
+	scanf("%u", &date.dd);
+	datec = setDay(datec, date.dd);
 	date = uncompressDate(datec);
 	printDate(date);
 	printCompressedDate(datec);
 
 	// Установка нового месяца
 
-	Month m;
 	printf("Enter new date mounth is ");
-	scanf("%u", &m);
-	datec = setMonth(datec, m);
+	scanf("%u", &date.mm);
+	datec = setMonth(datec, date.mm);
 	date = uncompressDate(datec);
 	printDate(date);
 	printCompressedDate(datec);
 
 	// Установка нового года
 
-	datec_t y;
 	printf("Enter new date year is ");
-	scanf("%u", &y);
-	datec = setYear(datec, y);
+	scanf("%u", &date.yy);
+	datec = setYear(datec, date.yy);
 	date = uncompressDate(datec);
 	printDate(date);
 	printCompressedDate(datec);
