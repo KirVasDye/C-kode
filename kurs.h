@@ -38,11 +38,11 @@ datec_t compressDate(Date d) {
 
 Date uncompressDate(datec_t dc) {
 	Date res;
-	res.yy = dc % int(pow(2, 7));
-	dc /=(pow(2, 7));
-	res.dd = dc % int(pow(2, 5));
-	dc /= (pow(2, 5));
-	res.mm = Month(dc);
+	res.yy = dc % (unsigned short) pow(2, 7);
+	dc /= (unsigned short) pow(2, 7);
+	res.dd = dc % (unsigned short) pow(2, 5);
+	dc /= (unsigned short) pow(2, 5);
+	res.mm = (Month) dc;
 	return res;
 }
 
