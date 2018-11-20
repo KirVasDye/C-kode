@@ -42,10 +42,11 @@ int main(void) {
 	printCompressedDate(datec);
 
 	// Установка нового года
-
+	
+	datec_t y;
 	printf("Enter new date year is ");
-	scanf("%u", &a);
-	datec = setYear(datec, a);
+	scanf("%u", &y);
+	datec = setYear(datec, y);
 	date = uncompressDate(datec);
 	printDate(date);
 	printCompressedDate(datec);
