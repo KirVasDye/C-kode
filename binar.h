@@ -11,12 +11,14 @@ unsigned short digitBinar(unsigned int a) {
 }
 
 unsigned int shifrBinar(unsigned int a) {
-	unsigned int buf = a;
 	unsigned int res = 0;
-	int i, sup = 1;
-	for (i = 0; i < digitBinar(a); i += 2) {
-		res += ((buf % 2) * 2 + (buf / 2) % 2)*sup;
-		sup *= 4;
+	int i;
+	for (i = (sizeof(unsigned int) * 8 - 1); i >= 0; i -=2) {
+		res |= a / (unsigned int)pow(2, i);
+		res *= 2;
+		a %= (unsigned int)pow(2, i);
+		res |= a / (unsigned int)pow(2, i - 1);
+		res *= 2;
 	}
 	return res;
 }
