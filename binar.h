@@ -12,15 +12,11 @@ unsigned short digitBinar(unsigned int a) {
 
 unsigned int shifrBinar(unsigned int a) {
 	unsigned int res = 0;
-	int i;
-	for (i = (sizeof(unsigned int) * 8 - 1); i >= 0; i -=2) {
-		res |= a / (unsigned int)pow(2, i);
-		res *= 2;
-		a %= (unsigned int)pow(2, i);
-		res |= a / (unsigned int)pow(2, i - 1);
-		res *= 2;
-	}
-	return res;
+        unsigned int mask1, mask2;
+        for(mask1 = 1, mask2 = 2; mask1 != 0; mask1 <<= 2, mask2  <<= 2) {
+	res |= ((a & mask1) << 1) | ((a & mask2) >> 1);
+        }
+return res;
 }
 
 void printAsBinar(unsigned int a) {
