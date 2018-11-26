@@ -128,10 +128,9 @@ void fullTaken() {
 bool exists() {
 	int x, y, k = 0;
 	int inv = 0;
-	int* arr;
+	int arr[16];
 	bool res;
-	arr = (int*)malloc(16 * sizeof(int));
-
+	
 	for (x = 0; x < 4; x++)
 		for (y = 0; y < 4; y++, k++)
 			arr[k] = taken[x][y];
@@ -148,8 +147,6 @@ bool exists() {
 		}
 
 	res = inv % 2 == 0 ? true : false;
-
-	free(arr);
 
 	return res;
 }
