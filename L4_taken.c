@@ -8,32 +8,43 @@ int main(void) {
 		taken[0][0] = taken[0][1];
 		taken[0][1] = tmp;
 	}
-	for (int k = 0; k < 4; k++)
-		for (int n = 0; n < 4; n++)
-			if (taken[k][n] == 0) {
-				i = k;
-				j = n;
-			}
+	findZero();
 	char move;
 	printf("You can use 'w','a','s','d' to movment\n");
 	printArr();
 	while (!final()) {
 		move = getchar();
 		if (move == 'w') {
-			up();
-			printArr();
+			if (upR()) {
+				up();
+				printArr();
+			}
+			else
+				printf(ERROR);
 		}
 		if (move == 's') {
-			down();
-			printArr();
+			if (downR()) {
+				down();
+				printArr();
+			}
+			else
+				printf(ERROR);
 		}
 		if (move == 'd') {
-			right();
-			printArr();
+			if (rightR()) {
+				right();
+				printArr();
+			}
+			else
+				printf(ERROR);
 		}
 		if (move == 'a'){
-			left();
-			printArr();
+			if (leftR()) {
+				left();
+				printArr();
+			}
+			else
+				printf(ERROR);
 		}
 	}
 	// End.
