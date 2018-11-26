@@ -23,7 +23,6 @@ int main(void) {
 		case 'w':
 			if (upR(i, n)) {
 				up(arr, i, j);
-				printArr(arr, n);
 			}
 			else
 				printf(ERROR);
@@ -31,7 +30,6 @@ int main(void) {
 		case 's':
 			if (downR(i, n)) {
 				down(arr, i, j);
-				printArr(arr, n);
 			}
 			else
 				printf(ERROR);
@@ -39,7 +37,6 @@ int main(void) {
 		case 'd':
 			if (rightR(j, n)) {
 				right(arr, i, j);
-				printArr(arr, n);
 			}
 			else
 				printf(ERROR);
@@ -47,13 +44,12 @@ int main(void) {
 		case 'a':
 			if (leftR(j, n)) {
 				left(arr, i, j);
-				printArr(arr, n);
 			}
 			else
 				printf(ERROR);
 			break;
 		}
-	
+		printArr(arr, n);
 	}
 
 	for (i = 0; i < n; i++)
