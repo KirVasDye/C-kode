@@ -3,8 +3,20 @@
 #include<stdlib.h>
 #include<stdbool.h>
 
+#define ERROR "You cant move at this direction\n"
+
 unsigned short taken[4][4];
 int i, j;
+
+void findZero() {
+	for (int k = 0; k < 4; k++)
+		for (int n = 0; n < 4; n++)
+			if (taken[k][n] == 0) {
+				i = k;
+				j = n;
+			}
+	return;
+}
 
 // Create function for move, were <i> and <j> is index zero
 
@@ -35,6 +47,23 @@ void left() {
 	j--;
 	return;
 }
+
+bool leftR() {
+	return j - 1 == -1 ? false : true;
+}
+
+bool rightR() {
+	return j + 1 == 4 ? false : true;
+}
+
+bool upR() {
+	return i - 1 == -1 ? false : true;
+}
+
+bool downR() {
+	return i + 1 == 4 ? false : true;
+}
+
 
 /*=========================================================*/
 
