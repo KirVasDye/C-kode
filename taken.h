@@ -71,6 +71,7 @@ bool downR() {
 
 void printArr() {
 	int k, l;
+	system("clear");
 	for (k = 0; k < 4; k++) {
 		for (l = 0; l < 4; l++) {
 			printf("\t%d", taken[k][l]);
