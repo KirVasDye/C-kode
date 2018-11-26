@@ -52,6 +52,7 @@ bool downR(int i, int n) {
 
 void printArr(unsigned short** taken, int n) {
 	int i, j;
+	system("clear")
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < n; j++) {
 			printf("\t%d", taken[i][j]);
