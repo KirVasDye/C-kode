@@ -17,7 +17,6 @@ int main(void) {
 		if (move == 'w') {
 			if (upR()) {
 				up();
-				printArr();
 			}
 			else
 				printf(ERROR);
@@ -25,7 +24,6 @@ int main(void) {
 		if (move == 's') {
 			if (downR()) {
 				down();
-				printArr();
 			}
 			else
 				printf(ERROR);
@@ -33,7 +31,6 @@ int main(void) {
 		if (move == 'd') {
 			if (rightR()) {
 				right();
-				printArr();
 			}
 			else
 				printf(ERROR);
@@ -41,11 +38,11 @@ int main(void) {
 		if (move == 'a'){
 			if (leftR()) {
 				left();
-				printArr();
 			}
 			else
 				printf(ERROR);
 		}
+		printArr();
 	}
 	// End.
 	return 0;
