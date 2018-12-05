@@ -1,36 +1,36 @@
-#include<stdio.h>
-#include<time.h>
-#include<stdlib.h>
-#include<stdbool.h>
-#include<malloc.h>
+#include <time.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <malloc.h>
+#include <stdio.h>
 
 #define ERROR "You cant move at this direction\n"
 
-void up(unsigned short** taken, int& i, int& j) {
-	taken[i][j] = taken[i - 1][j];
-	taken[i - 1][j] = 0;
-	i--;
+void up(unsigned short** taken, int* i, int* j) {
+	taken[*i][*j] = taken[*i - 1][*j];
+	taken[*i - 1][*j] = 0;
+	(*i)--;
 	return;
 }
 
-void down(unsigned short** taken, int& i, int& j) {
-	taken[i][j] = taken[i + 1][j];
-	taken[i + 1][j] = 0;
-	i++;
+void down(unsigned short** taken, int* i, int* j) {
+	taken[*i][*j] = taken[*i + 1][*j];
+	taken[*i + 1][*j] = 0;
+	(*i)++;
 	return;
 }
 
-void right(unsigned short** taken, int& i, int& j) {
-	taken[i][j] = taken[i][j + 1];
-	taken[i][j + 1] = 0;
-	j++;
+void right(unsigned short** taken, int* i, int* j) {
+	taken[*i][*j] = taken[*i][*j + 1];
+	taken[*i][*j + 1] = 0;
+	(*j)++;
 	return;
 }
 
-void left(unsigned short** taken, int& i, int& j) {
-	taken[i][j] = taken[i][j - 1];
-	taken[i][j - 1] = 0;
-	j--;
+void left(unsigned short** taken, int* i, int* j) {
+	taken[*i][*j] = taken[*i][*j - 1];
+	taken[*i][*j - 1] = 0;
+	(*j)--;
 	return;
 }
 
@@ -52,7 +52,7 @@ bool downR(int i, int n) {
 
 void printArr(unsigned short** taken, int n) {
 	int i, j;
-	system("clear")
+	system("clear");
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < n; j++) {
 			printf("\t%d", taken[i][j]);
@@ -130,12 +130,12 @@ bool exists(unsigned short** taken, int n) {
 	return res;
 }
 
-void findZero(unsigned short** taken, int n, int& i, int& j) {
+void findZero(unsigned short** taken, int n, int* i, int* j) {
 	for (int k = 0; k < n; k++)
 		for (int m = 0; m < n; m++)
 			if (taken[k][m] == 0) {
-				i = k;
-				j = m;
+				(*i) = k;
+				(*j) = m;
 			}
 	return;
 }
