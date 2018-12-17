@@ -58,6 +58,6 @@ int main(void) {
 	scanf("%d", &n);
 	printf("Enter size : ");
 	scanf("%d", &size);
-	funcForDrawing[n](size, simbol);
+	funcForDrawing[n-1](size, simbol);
 	return 0;
 }
