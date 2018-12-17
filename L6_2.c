@@ -34,8 +34,6 @@ void FilledDiamond(int size, char simbol) {
 		for(x = 0; x < size; x++) {
 			if(x >= size/2 - y && x <= size/2 + y && x >= y - size/2 && x <= 1.5 *(size - size%2) - y)
 				printf("%c", simbol);
-			else
-				printf(" ");
 		}
 		printf("\n");
 	}
